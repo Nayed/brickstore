@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Set number:</strong>
+  <%= @brick.set_number %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @brick.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @brick.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @brick.price %>
+</p>
+
+<%= link_to 'Edit', edit_brick_path(@brick) %> |
+<%= link_to 'Back', bricks_path %>
