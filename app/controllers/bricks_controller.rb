@@ -4,7 +4,7 @@ class BricksController < ApplicationController
   # GET /bricks
   # GET /bricks.json
   def index
-    @bricks = Brick.all
+    @bricks = Brick.paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /bricks/1

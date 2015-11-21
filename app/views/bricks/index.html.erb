@@ -48,4 +48,4 @@
 </div>
 <br>
 
-
+<%= will_paginate @bricks, class: "pagination pagination-no-border" if @bricks.respond_to?(:total_pages) %>
