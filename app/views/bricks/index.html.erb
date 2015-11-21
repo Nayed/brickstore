@@ -1,33 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Bricks</h1>
+<div class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <h4>Listing bricks</h4>
+      </div>
+      <div class="col-xs-6">
+        <h4><%= link_to 'New Brick', new_brick_path %></h4>
+      </div>
+    </div>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Set number</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Set number</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th class="td-actions text-right">Actions</th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @bricks.each do |brick| %>
-      <tr>
-        <td><%= brick.set_number %></td>
-        <td><%= brick.name %></td>
-        <td><%= brick.description %></td>
-        <td><%= brick.price %></td>
-        <td><%= link_to 'Show', brick %></td>
-        <td><%= link_to 'Edit', edit_brick_path(brick) %></td>
-        <td><%= link_to 'Destroy', brick, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @bricks.each do |brick| %>
+          <tr>
+            <td><%= brick.set_number %></td>
+            <td><%= brick.name %></td>
+            <td><%= brick.description %></td>
+            <td><%= brick.price %></td>
+            <td><%= link_to 'Show', brick %></td>
+            <td><%= link_to 'Edit', edit_brick_path(brick) %></td>
+            <td><%= link_to 'Destroy', brick, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
 
+        <% if @bricks.length == 0 %>
+          <tr><td colspan=42 class='text-center'>No bricks.</td></tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <br>
 
-<%= link_to 'New Brick', new_brick_path %>
+
